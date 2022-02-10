@@ -12,11 +12,13 @@
     float imgRatio = actualWidth/actualHeight;
     float maxRatio = minWidth/minHeight;
     float scaleRatio = 1;
+    float heightRatio = minHeight/actualHeight;
+    float widthRatio = minWidth/actualWidth;
     
-    if(imgRatio < maxRatio) {
-        scaleRatio = minWidth / actualWidth;
+    if(heightRatio < widthRatio) {
+        scaleRatio = widthRatio;
     } else {
-        scaleRatio = minHeight / actualHeight;
+        scaleRatio = heightRatio;
     }
     scaleRatio = fminf(1, scaleRatio);
 
