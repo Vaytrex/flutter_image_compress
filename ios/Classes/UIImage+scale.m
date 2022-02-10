@@ -16,9 +16,9 @@
     float widthRatio = minWidth/actualWidth;
     
     if(heightRatio < widthRatio) {
-        scaleRatio = widthRatio;
-    } else {
         scaleRatio = heightRatio;
+    } else {
+        scaleRatio = widthRatio;
     }
     scaleRatio = fminf(1, scaleRatio);
 
