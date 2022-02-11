@@ -171,7 +171,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   void getFileImage() async {
-    final img = AssetImage("img/img.jpg");
+    final img = AssetImage("img/dianpingtest.JPG");
     print("pre compress");
     final config = new ImageConfiguration();
 
@@ -182,7 +182,7 @@ class _MyAppState extends State<MyApp> {
     File file = createFile("${dir.absolute.path}/test.png");
     file.writeAsBytesSync(data.buffer.asUint8List());
 
-    final targetPath = dir.absolute.path + "/temp.jpg";
+    final targetPath = "/sdcard/Download/temp.jpg";
     final imgFile = await testCompressAndGetFile(file, targetPath);
 
     if (imgFile == null) {
@@ -199,7 +199,7 @@ class _MyAppState extends State<MyApp> {
       file.absolute.path,
       minWidth: 700,
       minHeight: 700,
-      quality: 80,
+      quality: 77,
     );
     print(file.lengthSync());
     print(result?.length);
@@ -211,10 +211,9 @@ class _MyAppState extends State<MyApp> {
     final result = await FlutterImageCompress.compressAndGetFile(
       file.absolute.path,
       targetPath,
-      quality: 90,
-      minWidth: 1024,
-      minHeight: 1024,
-      rotate: 90,
+      quality: 85,
+      minWidth: 700,
+      minHeight: 700,
     );
 
     print(file.lengthSync());
