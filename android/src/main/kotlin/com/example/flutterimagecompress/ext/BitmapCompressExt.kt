@@ -63,7 +63,7 @@ fun Bitmap.calcScale(minWidth: Int, minHeight: Int): Float {
   log("width scale = $scaleW")
   log("height scale = $scaleH")
   
-  return max(1f, min(scaleW, scaleH))
+  return max(1f, max(scaleW, scaleH))
 }
 
 fun convertFormatIndexToFormat(type: Int): Bitmap.CompressFormat {
