@@ -66,7 +66,7 @@ class _MyAppState extends State<MyApp> {
               aspectRatio: 1 / 1,
             ),
             TextButton(
-              child: Text('CompressFile and rotate 180'),
+              child: Text('CompressFile SR'),
               onPressed: _testCompressFile,
             ),
             TextButton(
@@ -125,7 +125,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   void _testCompressFile() async {
-    final img = AssetImage("img/img.jpg");
+    final img = AssetImage("img/dianpingtest.JPG");
     print("pre compress");
     final config = new ImageConfiguration();
 
@@ -197,10 +197,9 @@ class _MyAppState extends State<MyApp> {
     print("testCompressFile");
     final result = await FlutterImageCompress.compressWithFile(
       file.absolute.path,
-      minWidth: 2300,
-      minHeight: 1500,
-      quality: 94,
-      rotate: 180,
+      minWidth: 700,
+      minHeight: 700,
+      quality: 80,
     );
     print(file.lengthSync());
     print(result?.length);
